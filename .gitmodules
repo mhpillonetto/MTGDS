@@ -1,0 +1,6 @@
+[submodule "MTGDeckbuilder"]
+	path = MTGDeckbuilder
+	url = https://github.com/mhpillonetto/MTGDeckbuilder.git
+[submodule "MTG_Deckster"]
+	path = MTG_Deckster
+	url = https://github.com/mhpillonetto/MTG_Deckster.git
