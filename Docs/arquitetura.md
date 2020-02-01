@@ -91,8 +91,7 @@ Funcionalidade indispensável em qualquer projeto que necessite armazenar dados 
 de cada usuário
 
 Resolução: BUY
-Justificativa: por se tratar de uma parte central da segurança do app, é necessário que esta seja uma funcionalidade implementada tendo em vista
-especialmente a segurança. Para tal, utilizar-se-ão ferramentas privadas de desenvolvimento e gestão de autenticação, com código e acesso protegidos fim-a-fim
+Justificativa: por se tratar de uma parte central da segurança do app, é necessário que esta seja uma funcionalidade implementada tendo em vista princpipalmente a segurança. Para tal, utilizar-se-ão ferramentas privadas de desenvolvimento consolidadas third party de gestão e autenticação,com código e acesso protegidos fim-a-fim.
 
 3. Listagem e armazenamento dos dados
 Funcionalidade básica de interação do próprio app
@@ -107,4 +106,5 @@ Resolução: MAKE
 Justificativa: Não foram encontrados no mercado de implementações semelhantes ao casos de uso deste projeto. Dado prazo e recursos disponíveis,
 foi estipulado que a equipe desenvolverá esta nova funcionalidade em tempo de entrega.
 
+## UML
 
