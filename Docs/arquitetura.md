@@ -1,6 +1,6 @@
 ### Documento de arquitetura do projeto de Mentoria 2020
 
-## Projeto MTGDeckster - Marcelo Henrique Pillonetto
+# Projeto MTGDeckster - Marcelo Henrique Pillonetto
 
 ## **Índice**
 
@@ -14,7 +14,7 @@
 
 ## Requisitos
 
-## Requisitos funcionais
+### Requisitos funcionais
 * O App deve permitir que o usuário consiga buscar por qualquer carta de qualquer formato, aplicando variados filtros, como tipo de carta, custo de mana, texto presente na carta, etc.
 
 * O App deverá conter um construtor de deck completo, disponibilizando para o usuário várias ferramentas para tal, como filtro de cartas por formato, cor e afins. Também deverá conter os templates básicos para criar decks para todos os formatos do MTG.
@@ -30,18 +30,87 @@
 * A aplicação deverá conter uma funcionalidade de trocas de cartas entre os usuários, baseando-se nas listas de cada um
 
 
-## Requisitos não-funcionais
-### Requisitos do Produto
+### Requisitos não-funcionais
+#### Requisitos do Produto
 * O sistema deve ser compatível com uso mobile, podendo funcionar com acesso a internet intermitente
 * Persistência dos dados
 
-### Requisitos Externos
+#### Requisitos Externos
 * O sistema deve fornecer endpoints em padrão REST para que uma possível aplicação web possa consumir
 
-### Requisitos Organizacionais
+#### Requisitos Organizacionais
 * Não há requisitos desta natureza para o projeto em questão
 
+### Requisitos no padrão BDD
+#### Contexto:
+    Dado que eu não esteja logado:
 
+    **Cenário: Logar no App** 
+        Quando eu insiro no aplicatio minha senha, 
+        Devo ser autenticado no sistema 
+        Então redirecionado para a tela <Buscar Card>
+
+    **Cenário: Cadastrar-me no App**
+        Quando insiro meus dados no aplicativo
+        E concordo com os termos
+        Devo ser cadastrado, 
+        Autenticado,
+        Então sou redirecionado para a tela <Buscar Card>
+
+#### Contexto: 
+    Dado que eu esteja logado:
+
+    **Cenário: Editar perfil**
+        Quando estou na tela <Meu Perfil>
+        E seleciono editar
+        E edito os campos aos quais sou apresentado
+        Então sou redirecionado a tela <Meu Perfil>
+
+    **Cenário: Adicionar amigos**
+        Quando estou na tela <Meu Perfil>
+        E seleciono a "opcao amigos"
+        E clico em "adicionar amigos"
+        E preencho o campo de busca
+        E seleciono um dos resultados/busco novamente
+        Então o amigo é adicionado e retorno a tela <Meu Perfil>
+
+    **Cenário: Busca simples de card**
+        Quando eu estou na tela <Buscar Card>
+        E digito qualquer palavra no input
+        Então redirecionado a tela de <Resultados Busca Card>
+    
+    **Cenário: Busca avançada de card**
+        Quando estou na tela de <Busca Avançada>
+        E preencho quantos campos quiser
+        Então ou redirecionado a tela de <Resultados Busca Card>
+    
+    **Cenário: Consultar/editar coleção**
+        Quando estou na tela <Minha Coleção>
+        E preencho os filtros (ou nao)
+        Então consulto todas as cartas resultantes da busca
+    
+    **Cenário: Criar Lista**
+        Quando estou na tela <Criar Lista>
+        E preencho os campos básicos de tipo de lista
+        Então tenho que ser redirecionado para a tela <Detalhe Lista>
+
+    **Cenário: Editar Lista**
+        Quando estou na tela <Detalhe Lista>
+        E busco a carta na tela <Busca Avançada> 
+        E seleciono cartas para adicionar/remover
+        E sou redirecionado para <Detalhe Lista> 
+        Ou clico em {+}/{-} ao lado da carta em <Detalhe Lista>
+        Então o app deve re-renderizar a lista atualizada e redirecionar para a tela <Detalhe Lista>
+
+    **Cenário: Nova Troca (via busca)**
+        Quando estou na tela <Nova Troca>
+        E seleciono a opção buscar usuário ou trocar com amigo
+        E sou redirecionado para a tela <Efetuar Troca>
+        E ambos concordamos com a troca
+        E sou redirecionado a tela <QR Code confirmacao> 
+        E o usuario alvo concorda com a troca
+        Então sou redirecionado a tela <Historico de Trocas>
+    
 ## Escopo
 
 #### Declaração do escopo
