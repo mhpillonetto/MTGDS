@@ -5,12 +5,16 @@
 ## **Índice**
 
 1. Requisitos  
+    1.1. Requisitos BDD
 2. Escopo
 3. Entregáveis
 4. M/B/R
-5. Diagramas UML
+5. Diagramas UML*
 6. Versionamento
 7. Defesa de tecnologia
+
+*encontram-se em anexo
+
 
 ## Requisitos
 
@@ -102,7 +106,7 @@
         Ou clico em {+}/{-} ao lado da carta em <Detalhe Lista>
         Então o app deve re-renderizar a lista atualizada e redirecionar para a tela <Detalhe Lista>
 
-    **Cenário: Nova Troca (via busca)**
+    *_Cenário: Nova Troca (via busca)_*
         Quando estou na tela <Nova Troca>
         E seleciono a opção buscar usuário ou trocar com amigo
         E sou redirecionado para a tela <Efetuar Troca>
@@ -176,4 +180,98 @@ Justificativa: Não foram encontrados no mercado de implementações semelhantes
 foi estipulado que a equipe desenvolverá esta nova funcionalidade em tempo de entrega.
 
 ## UML
+Os diagramas encontram-se nomeados e em anexo.
 
+
+## Versionamento
+    Todo projeto de tecnologia deve aderir a um padrão de versionamento, visando permitir a colaboração
+    proveniente de múltiplas fontes no projeto. Sendo assim, devem ser escolhidos dois paradigmas:
+
+* linguagem de versionamento
+* __worflow__ de versionamento
+
+    Em se tratando de linguagens de versionamento, a com maior disponibilidade, adesão de mercado e versatilidade é o [git](https://git-scm.com/). Por estas razões, esta será a linguagem de versionamento utilizada para intermediar todos os processos feitos nos repositórios remotos do projeto, que será hospedado no [github](https://github.com/mhpillonetto/MTGDS) deste.
+    
+    Escolhido o git como linguagem, basta escolher dentre os paradigmas de versionamento disponíveis o mais adequado para a melhor condução do projeto. Tendo em mente quesitos como facilidade de aderencia do mercado, suporte da comunidade, casos de sucesso e agilidade de implementaáão, a ferramenta escolhida foi o [github-flow](https://guides.github.com/introduction/flow/). Um dos pontos mais atraentes desta variante __lightweight__ do gitflow original é sua facilidade de implementação para projetos de escala reduzida, como é o caso deste.
+
+## Relatório de defesa de tecnologia
+__Encontra-se anexo o mapa de tecnologias utilizadas no projeto, que serve de __overview__ da aplicação como um todo__
+
+A defesa será feita em cada instância do projeto, cobrindo:
+
+1. Banco de dados
+2. Uso de ORM
+3. Paradigma de Renderização web
+4. Linguagem/Framework Backend
+5. Linguagem/Framework Frontend
+6. DevOps & Cloud
+
+### Defesa
+#### 1 - Banco de dados
+    Primeiramente, a discussão é de paradigma geral: __Relacional x Não Relacional__
+    A decisão por um banco de dados *SQL*(Structured Query Language) veio devido ao fato de que se trata de uma aplicação de pequeno porte, com base de usuário de fácil determinação e relacionamento trivial entre suas classes (como evidenciado pelo diagrama de classes - em anexo). Utilizando um banco de dados SQL, aproveita-se das propriedades ACID deste, bem como evitam-se alguns pntos negativos do NoSQL:
+        - Falta de ferramentas de análise e teste de desempenho mobile
+        - Falta de padronização de linguagem
+    
+    Escolhido o SQL, agora basta definir um banco específico para a implementação deste. Para isso foi escolhido o *SQLite*. Extremamente leve e ágil, atendendo com primor os requisitos de armazenamento e requisição do app, sem onerar a performance e ocupação em memória deste.
+
+#### 2 - Uso de ORM
+
+
+#### 3 - Paradigma de Renderização web
+    Ao desenvolver uma aplicação, um dos paradigmas encontrados é envolvendo o processo de renderização das páginas/app, sendo os mais difundidos o *Server Rendering* e as *SPA's*.
+    A escolha por uma SPA vem de ...
+
+#### 4 - Linguagem/Framework Backend
+    A linguagem escolhida para o desenvolvimento backend foi o [Node.js](https://nodejs.org/en/). 
+    Para justificar a escolha da linguagem para esta função, elencam-se aos pontos abaixo:
+    *   Universalidade de código (stack full JavaScript -- estado da arte)
+    *   Fácil integração com banco de dados via ORM
+    *   Ferramentas como o [webpack](https://webpack.js.org/) ajudam a reutilizar código fim-a-fim e mantem a coerência ao longo das diversas instâncias do sistema 
+    *   Features específicas do JavaScript como funcoes assíncronas, que são essenciais e de extrema praticidade para o desenvolvimento web/mobile moderno
+
+    O Framwork de node.js escolhido para o desenvolvimento foi o [express](https://expressjs.com/pt-br/). Este foi escolhido por ter as seguintes caracteristicas:
+    *   Rápido, agnóstico e minimalista, se tornou a ferramenta mais popular de desenvolvimento backend para JavaScript
+    *   Com uma miríade de métodos utilitários HTTP e middleware a seu dispor, o express é ferramenta __go-to__ no desenvolvimento de API's seguindo o padrão REST
+
+#### 5 - Linguagem/Framwework Frontend
+    A linguagem escolhida para o desenvolvimento frontend foi o JavaScript.
+    Para justificar a escolha da linguagem para esta função, elencam-se aos pontos abaixo:
+    *   Como se trata de uma SPA, a maioria do trabalho de rendereização será do frontend, o que pede para uma linguagem robusta e de capacidade de renderização rebuscada, que é o caso do JS.
+    *   É a linguagem mais utilizada atualmente para frontend, o que acarreta numa maior disponibilidade de frameworks especializados para dadas tarefas
+
+    O Framework de JavaScript escolhido para desenvolver o frontend foi o [ReactNative](https://facebook.github.io/react-native/). Este foi escolhido por ter as seguintes caracteristicas:
+    *   Um código, dois SOs: O react native compila o código JavaScript diretamente para o mobile do iOS(Objective C) e Android (Java)
+    *   Feito especialmente para rodar SPAs no mobile
+    *   Estado da arte em desenvolvimento mobile, com diversas bibliotecas e uma vasta comunidade fornecendo-as suporte
+    *   features como AsyncStorage, que permitem facilmente uso de cache e redução do consumo de dados
+    *   código leve e orientação a componentes garantem DRY 
+
+#### 6 - DevOps & Cloud
+    Serão analizadas cada uma das tecnologias implementadas separadamente
+    como referência recomenda-se o site da AWS 
+    e o documento de mapeamento de serviços em anexo (DevOps_MTGDS.png)
+    
+    *AWS Elasitc Beanstalk:*
+        - Fornece ambiente simples e de fácil implementação 
+        - Fornece provisionamento dinâmico facilmente configurado
+        - A aplicação tem dimensão suficinete para permanecer em sua __free-tier__
+        - Provê escalabilidade conforme o necessário
+    
+    *AWS Elastic Computing Cloud (EC2):*
+        - Elimina a necessidade de investir em hardware inicialmente, permitindo desenvolver e implantar o aplicativo com mais rapidez.
+        - Servidor versáril que comporta diversas aplicacoes rodando em Docker, Apache, etc
+        - Várias configurações de capacidade de CPU, memória, armazenamento
+        - A aplicação tem dimensão suficinete para permanecer em sua __free-tier__
+
+    *AWS Relational Database Service (RDS): *
+        - Oferece capacidade econômica e redimensionável (free tier, novamente...)
+        - Automatiza tarefas demoradas de administração, como provisionamento de hardware, configuração de bancos de dados, aplicação de patches e backups
+        - Compatível com diversos mecanismos, inclusive SQLite
+        - Backup confiável de dados
+    
+    *AWS Simple Storage Service (S3): *
+        - Serviço de storage simples e barato
+        - ideal para dados __cold__, de alta latencia e baixa frequencia de acesso
+        - manuseio de backups automatizado
+    
