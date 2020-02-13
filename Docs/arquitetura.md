@@ -228,7 +228,8 @@ Primeiramente, a discussão é de paradigma geral: __Relacional x Não Relaciona
 
 #### 3 - Paradigma de Renderização web
    Ao desenvolver uma aplicação, um dos paradigmas encontrados é envolvendo o processo de renderização das páginas/app, sendo os mais difundidos o *Server Rendering* e as *SPA's*.
-    A escolha por uma SPA vem de ...
+    A escolha por uma SPA vem de diversas considerações, entre elas:
+    ** Conexão Intermitente:** O usuário de um app mobile nao está garantido de estar conectado 100% do tempo com a internet. Quando se trata de soluções SSR, a cada página que o usuário navega, o servidor deve fazer todo o trabalho de busca de dados e renderização. Desta forma, quando se trabalha com conexao intermitente, é favorável que os dados sejam carregados de uma única vez n aplicativo, e em seguida sejam guardados na memória local temporária (cache) deste.
 
 #### 4 - Linguagem/Framework Backend
 A linguagem escolhida para o desenvolvimento backend foi o [Node.js](https://nodejs.org/en/). 
