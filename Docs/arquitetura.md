@@ -253,25 +253,29 @@ como referência recomenda-se o site da AWS
 e o documento de mapeamento de serviços em anexo (DevOps_MTGDS.png)
 
 **AWS Elasitc Beanstalk:**
-    - Fornece ambiente simples e de fácil implementação 
-    - Fornece provisionamento dinâmico facilmente configurado
-    - A aplicação tem dimensão suficinete para permanecer em sua __free-tier__
-    - Provê escalabilidade conforme o necessário
+
+- Fornece ambiente simples e de fácil implementação 
+- Fornece provisionamento dinâmico facilmente configurado
+- A aplicação tem dimensão suficinete para permanecer em sua __free-tier__
+- Provê escalabilidade conforme o necessário
 
 **AWS Elastic Computing Cloud (EC2):**
-    - Elimina a necessidade de investir em hardware inicialmente, permitindo desenvolver e implantar o aplicativo com mais rapidez.
-    - Servidor versáril que comporta diversas aplicacoes rodando em Docker, Apache, etc
-    - Várias configurações de capacidade de CPU, memória, armazenamento
-    - A aplicação tem dimensão suficinete para permanecer em sua __free-tier__
+
+- Elimina a necessidade de investir em hardware inicialmente, permitindo desenvolver e implantar o aplicativo com mais rapidez.
+- Servidor versáril que comporta diversas aplicacoes rodando em Docker, Apache, etc
+- Várias configurações de capacidade de CPU, memória, armazenamento
+- A aplicação tem dimensão suficinete para permanecer em sua __free-tier__
 
 **AWS Relational Database Service (RDS):**
-    - Oferece capacidade econômica e redimensionável (free tier, novamente...)
-    - Automatiza tarefas demoradas de administração, como provisionamento de hardware, configuração de bancos de dados, aplicação de patches e backups
-    - Compatível com diversos mecanismos, inclusive SQLite
-    - Backup confiável de dados
+
+- Oferece capacidade econômica e redimensionável (free tier, novamente...)
+- Automatiza tarefas demoradas de administração, como provisionamento de hardware, configuração de bancos de dados, aplicação de patches e backups
+- Compatível com diversos mecanismos, inclusive SQLite
+- Backup confiável de dados
 
 **AWS Simple Storage Service (S3):**
-    - Serviço de storage simples e barato
-    - ideal para dados __cold__, de alta latencia e baixa frequencia de acesso
-    - manuseio de backups automatizado
+
+- Serviço de storage simples e barato
+- ideal para dados __cold__, de alta latencia e baixa frequencia de acesso
+- manuseio de backups automatizado
     
