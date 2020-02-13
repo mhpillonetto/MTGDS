@@ -65,12 +65,14 @@ Dado que eu não esteja logado:
 Dado que eu esteja logado:
 
 **Cenário: Editar perfil**
+
     Quando estou na tela <Meu Perfil>
     E seleciono editar
     E edito os campos aos quais sou apresentado
     Então sou redirecionado a tela <Meu Perfil>
 
 **Cenário: Adicionar amigos**
+
     Quando estou na tela <Meu Perfil>
     E seleciono a "opcao amigos"
     E clico em "adicionar amigos"
@@ -79,26 +81,31 @@ Dado que eu esteja logado:
     Então o amigo é adicionado e retorno a tela <Meu Perfil>
 
 **Cenário: Busca simples de card**
+
     Quando eu estou na tela <Buscar Card>
     E digito qualquer palavra no input
     Então redirecionado a tela de <Resultados Busca Card>
 
 **Cenário: Busca avançada de card**
+
     Quando estou na tela de <Busca Avançada>
     E preencho quantos campos quiser
     Então ou redirecionado a tela de <Resultados Busca Card>
 
 **Cenário: Consultar/editar coleção**
+
     Quando estou na tela <Minha Coleção>
     E preencho os filtros (ou nao)
     Então consulto todas as cartas resultantes da busca
 
 **Cenário: Criar Lista**
+
     Quando estou na tela <Criar Lista>
     E preencho os campos básicos de tipo de lista
     Então tenho que ser redirecionado para a tela <Detalhe Lista>
 
 **Cenário: Editar Lista**
+
     Quando estou na tela <Detalhe Lista>
     E busco a carta na tela <Busca Avançada> 
     E seleciono cartas para adicionar/remover
@@ -107,6 +114,7 @@ Dado que eu esteja logado:
     Então o app deve re-renderizar a lista atualizada e redirecionar para a tela <Detalhe Lista>
 
 **Cenário: Nova Troca (via busca)**
+
     Quando estou na tela <Nova Troca>
     E seleciono a opção buscar usuário ou trocar com amigo
     E sou redirecionado para a tela <Efetuar Troca>
